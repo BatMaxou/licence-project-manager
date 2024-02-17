@@ -25,3 +25,4 @@
 ###< symfony/asset-mapper ###
 
 docker-compose.override.yaml
+/public/uploads

@@ -16,7 +16,7 @@ class Category
     #[ORM\Column(length: 255)]
     private string $label;
 
-    public function __construct(string $label)
+    public function __construct(string $label = '')
     {
         $this->label = $label;
     }
@@ -36,5 +36,10 @@ class Category
         $this->label = $label;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->label;
     }
 }
