@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Technology;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ColorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class TechnologyCrudController extends AbstractCrudController
@@ -19,6 +20,7 @@ class TechnologyCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('label'),
+            ColorField::new('tagColor'),
         ];
     }
 }

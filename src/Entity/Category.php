@@ -16,9 +16,13 @@ class Category
     #[ORM\Column(length: 255)]
     private string $label;
 
-    public function __construct(string $label = '')
+    #[ORM\Column(length: 255)]
+    private string $tagColor;
+
+    public function __construct(string $label = '', string $tagColor = '#')
     {
         $this->label = $label;
+        $this->tagColor = $tagColor;
     }
 
     public function getId(): ?int
@@ -34,6 +38,18 @@ class Category
     public function setLabel(string $label): static
     {
         $this->label = $label;
+
+        return $this;
+    }
+
+    public function getTagColor(): string
+    {
+        return $this->tagColor;
+    }
+
+    public function setTagColor(string $tagColor): static
+    {
+        $this->tagColor = $tagColor;
 
         return $this;
     }

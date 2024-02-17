@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 class="without-bottom-margin">{{ project.name }}</h1>
+
+    {% if project.endDate %}
+        <h3>{{ project.startDate|date('d/m/Y') ~ ' - ' ~ project.endDate|date('d/m/Y')}}</h3>
+    {% else %}
+        <h3>{{ 'since ' ~ project.startDate|date('d/m/Y')}}</h3>
+    {% endif %}
+    
+    <div class="project">
+        <div class="img-container">
+            <img src="{{ asset('uploads/' ~ project.image) }}" alt="{{ project.name ~ ' cover' }}">
+        </div>
+
+        <div class="details">
+            <div class="category">
+                {% include 'components/tag.html.twig' with {
+                    content: project.category.label,
+                    color: project.category.tagColor,
+                } %}
+            </div>
+
+            {% if project.technologies is not empty %}
+                <div class="technologies">
+                    {% for technology in project.technologies %}
+                        {% include 'components/tag.html.twig' with {
+                            content: technology.label,
+                            color: technology.tagColor,
+                        } %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <p>{{ project.description }}</p>
+            
+            {% if project.link %}
+                <a href="{{ project.link }}" target="_blank">{{ project.link }}</a>
+            {% endif %}
+        </div>
+    </div> 
+</div>
+{% endblock %}

@@ -55,6 +55,8 @@ final class ProjectFactory extends ModelFactory
                 category: 'project',
                 dir: 'public/uploads',
                 fullPath: false,
+                width: 400,
+                height: 400,
             ),
             'link' => self::faker()->boolean(30) ? self::faker()->url() : null,
             'category' => CategoryFactory::random(),
