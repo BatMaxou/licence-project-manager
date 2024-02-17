@@ -48,6 +48,7 @@ final class CategoryFactory extends ModelFactory
     {
         return [
             'label' => self::faker()->word(),
+            'tagColor' => self::faker()->hexColor(),
         ];
     }
 

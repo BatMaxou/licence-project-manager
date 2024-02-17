@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="overview">
+        <h3>{{ project.name }}</h3>
+
+        {% if project.endDate %}
+            <p>{{ project.startDate|date('d/m/Y') ~ ' - ' ~ project.endDate|date('d/m/Y')}}</p>
+        {% else %}
+            <p>{{ 'since ' ~ project.startDate|date('d/m/Y')}}</p>
+        {% endif %}
+    </div>
+
+    <div class="img-container">
+        <img src="{{ asset('uploads/' ~ project.image) }}" alt="{{ project.name ~ ' cover' }}" />
+    </div>
+
+    <div class="show-more">
+        <a href="{{ path('project', {id: project.id}) }}">
+            <h3>Show more</h3>
+        </a>
+    </div>
+</div>

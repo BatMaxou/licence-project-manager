@@ -48,6 +48,7 @@ final class TechnologyFactory extends ModelFactory
     {
         return [
             'label' => self::faker()->word(),
+            'tagColor' => self::faker()->hexColor(),
         ];
     }
 
