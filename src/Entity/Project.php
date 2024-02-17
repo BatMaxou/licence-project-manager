@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -42,16 +43,16 @@ class Project
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private Category $categorie;
+    private Category $category;
 
     #[ORM\ManyToMany(targetEntity: Technology::class)]
     private Collection $technologies;
 
     public function __construct(
-        string $name,
-        string $image,
-        string $description,
-        \DateTimeInterface $startDate,
+        string $name = '',
+        string $image = '',
+        string $description = '',
+        \DateTimeInterface $startDate = new DateTime(),
         ?\DateTimeInterface $endDate = null,
     ) {
         $this->name = $name;
@@ -157,14 +158,14 @@ class Project
         return $this->lastModificationDate;
     }
 
-    public function getCategorie(): Category
+    public function getCategory(): Category
     {
-        return $this->categorie;
+        return $this->category;
     }
 
-    public function setCategorie(Category $categorie): static
+    public function setCategory(Category $category): static
     {
-        $this->categorie = $categorie;
+        $this->category = $category;
         $this->setLastModificationDate(new \DateTime());
 
         return $this;
