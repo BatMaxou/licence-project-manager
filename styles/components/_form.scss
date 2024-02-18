@@ -1,0 +1,55 @@
+.form-input {
+    width: 50%;
+    max-width: 400px;
+    min-width: 200px;
+
+    font-size: $font-size;
+    color: $white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $white;
+    padding: 10px 5px;
+
+    &:focus {
+        outline: none;
+        border-bottom-color: $primary-color;
+    }
+}
+
+.form-submit {
+    width: 25%;
+    max-width: 200px;
+    min-width: 100px;
+
+    font-size: $font-size;
+    color: $white;
+    margin-block: 15px;
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid $white;
+    border-radius: 10px;
+
+    &:hover {
+        cursor: pointer;
+        border-color: $primary-color;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+    }
+}
+
+.form-error {
+    width: 50%;
+    max-width: 400px;
+    min-width: 200px;
+    color: $red;
+    text-align: center;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
