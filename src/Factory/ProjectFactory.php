@@ -60,7 +60,7 @@ final class ProjectFactory extends ModelFactory
             ),
             'link' => self::faker()->boolean(30) ? self::faker()->url() : null,
             'category' => CategoryFactory::random(),
-            'technologies' => TechnologyFactory::randomSet(self::faker()->numberBetween(0, 5)),
+            'technologies' => TechnologyFactory::randomSet(self::faker()->numberBetween(1, 5)),
             'startDate' => $startDate,
             'endDate' => self::faker()->boolean(70) ? self::faker()->dateTimeBetween($startDate, 'now') : null
         ];
