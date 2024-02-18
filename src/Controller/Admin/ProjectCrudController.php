@@ -60,6 +60,7 @@ class ProjectCrudController extends AbstractCrudController
                 ->autocomplete(),
             AssociationField::new('technologies')
                 ->autocomplete()
+                ->setRequired(true),
         ];
     }
 }
