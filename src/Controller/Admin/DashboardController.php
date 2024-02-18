@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\User;
 use App\Entity\Project;
 use App\Entity\Category;
 use App\Entity\Technology;
@@ -43,5 +44,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Project', 'fas fa-layer-group', Project::class)->setAction(Crud::PAGE_INDEX);
         yield MenuItem::linkToCrud('Technology', 'fas fa-layer-group', Technology::class)->setAction(Crud::PAGE_INDEX);
         yield MenuItem::linkToCrud('Category', 'fas fa-layer-group', Category::class)->setAction(Crud::PAGE_INDEX);
+        yield MenuItem::linkToCrud('User', 'fas fa-layer-group', User::class)->setAction(Crud::PAGE_INDEX);
     }
 }
