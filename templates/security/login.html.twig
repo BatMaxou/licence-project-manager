@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connection{% endblock %}
+{% block title %}Sign In{% endblock %}
 
 {% block body %}
 <div class="content">
-    <h1>Connection</h1>
+    <h1>Sign In</h1>
     <form class="login-form" method="post">
         <input
             type="text"
@@ -33,7 +33,7 @@
             <div class="form-error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %} 
 
-        <button class="form-submit" type="submit">Sign in</button>
+        <button class="form-submit" type="submit">Connection</button>
     </form>
 </div>
 {% endblock %}

@@ -2,10 +2,12 @@
 @import 'base';
 
 @import 'components/navbar';
+@import 'components/form';
 @import 'components/card';
 @import 'components/tag';
 @import 'components/footer';
 
 @import 'pages/login';
+@import 'pages/register';
 @import 'pages/projects';
 @import 'pages/project';

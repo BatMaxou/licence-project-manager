@@ -28,8 +28,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private string $password;
 
     public function __construct(
-        string $username,
-        string $password,
+        string $username = '',
+        string $password = '',
         array $roles = ['ROLE_USER']
     ) {
         $this->username = $username;

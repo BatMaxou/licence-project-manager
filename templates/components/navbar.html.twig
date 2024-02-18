@@ -2,6 +2,14 @@
     <h2><a href="{{ path('home')}}">Project Manager</a></h2>
 
     <ul class="actions">
-        <li><a href="{{ path('app_login') }}">Connection</a></li>
+    {% if is_granted('ROLE_ADMIN') %}
+        <li><a href="{{ path('admin') }}">Backoffice</a></li>
+    {% endif %}
+    {% if is_granted('ROLE_USER') %}
+        <li> <a href="{{ path('app_logout') }}">Sign Out</a></li>
+    {% else %}
+        <li><a href="{{ path('app_login') }}">Sign In</a></li>
+        <li><a href="{{ path('app_register') }}">Register</a></li>
+    {% endif %}
     </ul>
 </nav>
